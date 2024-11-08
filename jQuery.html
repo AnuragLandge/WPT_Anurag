@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery Click Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+  .resize {
+    font-size: 24px;
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<p class="changeable">Click me - Tag 1</p>
+<h1 class="changeable">Click me - Tag 2</h1>
+<div class="changeable">Click me - Tag 3</div>
+
+<script>
+$(document).ready(function() {
+  $('.changeable').on('click', function() {
+    $(this).toggleClass('resize');
+  });
+});
+</script>
+
+</body>
+</html>
