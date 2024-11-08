@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://www.google.com" onsubmit="return validate()">
+        <input type="text" placeholder="Name" id="name"><br>
+        <span id="p1" style="color: red;"></span><br>
+        <input type="password" placeholder="Password" id="password"><br>
+        <span id="p2" style="color: red;"></span><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function validate() {
+            // Clear previous error messages
+            document.getElementById("p1").innerHTML = "";
+            document.getElementById("p2").innerHTML = "";
+
+            const n = document.getElementById("name").value;
+            const p = document.getElementById("password").value;
+            var isvalid = true;
+
+            if (n.length == 0) {
+                document.getElementById("p1").innerHTML = "Name Required";
+                isvalid = false;
+            }
+            if (p.length == 0) {
+                document.getElementById("p2").innerHTML = "Password Required";
+                isvalid = false;
+            }
+            return isvalid;
+        }
+    </script>
+</body>
+</html>
